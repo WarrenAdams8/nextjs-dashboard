@@ -1,4 +1,3 @@
-// @ts-nocheck
 import {
   BanknotesIcon,
   ClockIcon,
@@ -16,6 +15,13 @@ const iconMap = {
 };
 
 export default async function CardWrapper() {
+  const {
+    numberOfInvoices,
+    numberOfCustomers,
+    totalPaidInvoices,
+    totalPendingInvoices,
+  } = await fetchCardData();
+  // @ts-ignore
   return (
     <>
       <Card title="Collected" value={totalPaidInvoices} type="collected" />
